@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Sweets | Homemade Sweets & Chamoy Bar Catering in San Diego, CA</title>
+<meta name="description" content="Sweet Sweets — homemade cakes, cupcakes, Mexican candy and chamoy bar catering for events across San Diego, California. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF7F1;      /* 60% */
+    --blush:#F3E7D8;      /* 30% soft sections */
+    --card:#FFFFFF;
+    --ink:#4A2E1E;        /* espresso text */
+    --ink-soft:#7A5B44;
+    --berry:#B4586A;      /* 10% accent — CTAs only */
+    --berry-dark:#9C4657;
+    --brass:#B08B57;      /* support tone, sparingly */
+    --radius:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:"Fraunces",Georgia,serif;line-height:1.15;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,247,241,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(74,46,30,.12)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:1.35rem;color:var(--ink)}
+  .brand span{color:var(--berry)}
+  .nav-links{display:flex;gap:28px;align-items:center;font-size:.95rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--berry)}
+  .btn{display:inline-block;background:var(--berry);color:#FBF7F1;padding:12px 26px;border-radius:999px;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:transform .15s ease,background .15s ease}
+  .btn:hover{background:var(--berry-dark);transform:translateY(-1px)}
+  .btn-sm{padding:9px 20px;font-size:.88rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:84px 0 60px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--berry);background:rgba(180,88,106,.1);padding:7px 16px;border-radius:999px;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.8rem);font-weight:700;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--berry)}
+  .hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:34rem;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:26px}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid rgba(74,46,30,.25)}
+  .btn-ghost:hover{border-color:var(--berry);color:var(--berry);background:transparent}
+  .trust{display:flex;gap:22px;flex-wrap:wrap;font-size:.9rem;color:var(--ink-soft)}
+  .trust b{color:var(--ink)}
+  .hero-art{display:flex;justify-content:center}
+  .cupcake-card{background:var(--card);border-radius:32px;padding:36px;box-shadow:0 24px 60px rgba(74,46,30,.12);border:1px solid rgba(176,139,87,.25);max-width:380px;width:100%;text-align:center}
+  .cupcake-card figcaption{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-soft);margin-top:14px}
+
+  /* ---------- Marquee ribbon ---------- */
+  .ribbon{background:var(--ink);color:#F6EBDD;overflow:hidden;padding:14px 0;transform:rotate(-1deg);margin:10px -10px 0}
+  .ribbon-track{display:flex;gap:0;width:max-content;animation:scroll 26s linear infinite;font-family:"Fraunces",serif;font-size:1.02rem;letter-spacing:.04em;white-space:nowrap}
+  .ribbon-track span{padding:0 26px;display:flex;align-items:center;gap:26px}
+  .ribbon-track i{color:var(--brass);font-style:normal}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- Section headers ---------- */
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head .kicker{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:12px;display:block}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;margin-bottom:12px}
+  .sec-head p{color:var(--ink-soft)}
+
+  /* ---------- Services ---------- */
+  #services{background:var(--blush);border-radius:40px;margin:0 12px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{background:var(--card);border-radius:var(--radius);padding:30px 26px;border:1px solid rgba(74,46,30,.08);box-shadow:0 8px 24px rgba(74,46,30,.06);transition:transform .18s ease,box-shadow .18s ease}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(74,46,30,.12)}
+  .svc .icon{width:52px;height:52px;border-radius:16px;background:rgba(180,88,106,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .svc .icon svg{width:28px;height:28px;stroke:var(--berry);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .svc h3{font-size:1.18rem;font-weight:600;margin-bottom:8px}
+  .svc p{font-size:.94rem;color:var(--ink-soft)}
+  .svc .tag{display:inline-block;margin-top:14px;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+
+  /* ---------- Why us ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .why{background:var(--card);border-radius:var(--radius);padding:32px;border:1px solid rgba(74,46,30,.08);display:flex;gap:20px;align-items:flex-start}
+  .why .num{font-family:"Fraunces",serif;font-size:2rem;font-weight:700;color:var(--berry);line-height:1;flex-shrink:0}
+  .why h3{font-size:1.12rem;margin-bottom:6px}
+  .why p{font-size:.94rem;color:var(--ink-soft)}
+
+  /* ---------- Service area ---------- */
+  #area{background:var(--ink);color:#F6EBDD;border-radius:40px;margin:0 12px}
+  #area .sec-head h2{color:#F6EBDD}
+  #area .sec-head p{color:#D9C6B2}
+  .towns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+  .town{border:1px solid rgba(246,235,221,.3);padding:10px 22px;border-radius:999px;font-size:.95rem}
+  .town.home{background:var(--berry);border-color:var(--berry);color:#FBF7F1;font-weight:600}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+  .contact-info h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:14px}
+  .contact-info p{color:var(--ink-soft);margin-bottom:24px}
+  .info-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:1rem}
+  .info-row .dot{width:42px;height:42px;border-radius:50%;background:rgba(180,88,106,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .info-row .dot svg{width:20px;height:20px;stroke:var(--berry);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .info-row a{font-weight:600;color:var(--berry)}
+  .quote-form{background:var(--card);border-radius:var(--radius);padding:34px;border:1px solid rgba(74,46,30,.1);box-shadow:0 16px 44px rgba(74,46,30,.08)}
+  .quote-form h3{font-size:1.3rem;margin-bottom:6px}
+  .quote-form>p{font-size:.92rem;color:var(--ink-soft);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+  .field input,.field textarea,.field select{width:100%;padding:12px 14px;border:1.5px solid rgba(74,46,30,.2);border-radius:12px;font:inherit;font-size:.95rem;background:var(--cream);color:var(--ink)}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--berry)}
+  .field textarea{min-height:110px;resize:vertical}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#D9C6B2;padding:44px 0 30px;text-align:center}
+  footer .brand{color:#F6EBDD}
+  footer .brand span{color:var(--brass)}
+  footer p{font-size:.9rem;margin:8px 0}
+  footer a{color:#F6EBDD}
+  .credit{margin-top:22px;padding-top:18px;border-top:1px solid rgba(246,235,221,.15);font-size:.82rem;color:#A98F76}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-art{order:-1}
+    .cupcake-card{max-width:300px;padding:26px}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    section{padding:56px 0}
+    .nav-links{position:fixed;top:64px;right:0;left:0;background:var(--cream);flex-direction:column;align-items:flex-start;padding:20px 24px 26px;gap:18px;border-bottom:1px solid rgba(74,46,30,.12);transform:translateY(-140%);transition:transform .25s ease;box-shadow:0 20px 40px rgba(74,46,30,.1)}
+    .nav-links.open{transform:none}
+    .burger{display:block}
+    .svc-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    #services,#area{margin:0 6px;border-radius:28px}
+    .hero{padding:60px 0 44px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Sweet<span>Sweets</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Treats</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-sm">Get a Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">San Diego, California</span>
+      <h1>Homemade sweets, <em>baked fresh</em> for your celebration.</h1>
+      <p class="lead">Custom cakes, cupcakes, Mexican candy and our famous chamoy bar catering — made from scratch in San Diego for birthdays, quinceañeras, weddings and every sweet occasion in between.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get a Free Quote</a>
+        <a href="mailto:101sweetsweets@gmail.com" class="btn btn-ghost">Email Us</a>
+      </div>
+      <div class="trust">
+        <span><b>Baked to order</b> — never store-bought</span>
+        <span><b>San Diego</b> local kitchen</span>
+        <span><b>Events</b> of every size</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <figure class="cupcake-card">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Cupcake illustration">
+          <ellipse cx="100" cy="172" rx="62" ry="10" fill="#F3E7D8"/>
+          <path d="M70 120 L130 120 L122 168 Q121 174 115 174 L85 174 Q79 174 78 168 Z" fill="#B08B57"/>
+          <path d="M70 120 L130 120 L127 134 L73 134 Z" fill="#9A7847"/>
+          <line x1="86" y1="134" x2="89" y2="168" stroke="#8a6a3c" stroke-width="3" stroke-linecap="round"/>
+          <line x1="100" y1="134" x2="100" y2="170" stroke="#8a6a3c" stroke-width="3" stroke-linecap="round"/>
+          <line x1="114" y1="134" x2="111" y2="168" stroke="#8a6a3c" stroke-width="3" stroke-linecap="round"/>
+          <path d="M62 118 Q58 96 74 88 Q70 74 86 70 Q84 56 100 56 Q116 56 114 70 Q130 74 126 88 Q142 96 138 118 Q138 124 130 124 L70 124 Q62 124 62 118 Z" fill="#F2B8C6"/>
+          <path d="M74 88 Q70 74 86 70" fill="none" stroke="#E08FA3" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="100" cy="46" r="9" fill="#B4586A"/>
+          <path d="M100 40 q6 -8 12 -6" stroke="#7A5B44" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="82" cy="98" r="4" fill="#B4586A" opacity=".7"/>
+          <circle cx="118" cy="100" r="4" fill="#B4586A" opacity=".7"/>
+          <circle cx="100" cy="108" r="4" fill="#B4586A" opacity=".7"/>
+          <circle cx="92" cy="90" r="3" fill="#9C4657" opacity=".6"/>
+          <circle cx="110" cy="88" r="3" fill="#9C4657" opacity=".6"/>
+        </svg>
+        <figcaption>Fresh from our San Diego kitchen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span>Fresh-Baked Daily <i>✦</i> Custom Cakes <i>✦</i> Chamoy Bar Catering <i>✦</i> Quinceañeras & Weddings <i>✦</i> San Diego, CA <i>✦</i></span>
+    <span>Fresh-Baked Daily <i>✦</i> Custom Cakes <i>✦</i> Chamoy Bar Catering <i>✦</i> Quinceañeras & Weddings <i>✦</i> San Diego, CA <i>✦</i></span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Our Treats</span>
+      <h2>Everything baked from scratch</h2>
+      <p>Every order is made fresh for your date — tell us your theme, your flavors, and how many guests, and we'll handle the sweets.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 21h16M5 21v-6h14v6M12 15V9M12 9c-4 0-7-2-7-5 3 0 5 1 7 3 2-2 4-3 7-3 0 3-3 5-7 5z"/></svg></div>
+        <h3>Custom Celebration Cakes</h3>
+        <p>Birthday, quinceañera and wedding cakes baked to order in the flavors you love — vanilla, chocolate, tres leches and more, decorated for your theme.</p>
+        <span class="tag">Made to order</span>
+      </article>
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 13h10l-1.2 7a1 1 0 0 1-1 .8H9.2a1 1 0 0 1-1-.8L7 13zM6 11c0-3 2.5-5 6-5s6 2 6 5H6zM12 6V4"/></svg></div>
+        <h3>Cupcakes & Mini Desserts</h3>
+        <p>Bite-size cupcakes, mini cheesecakes and cake pops in assorted flavors — perfect for parties, offices, baby showers and dessert tables.</p>
+        <span class="tag">Party favorite</span>
+      </article>
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 8h14l-2 12a2 2 0 0 1-2 1.6H9A2 2 0 0 1 7 20L5 8zM8 8V6a4 4 0 0 1 8 0v2M9 12h.01M15 12h.01M12 15h.01"/></svg></div>
+        <h3>Chamoy Bar Catering</h3>
+        <p>Our signature chamoy candy bar for your event — chamoy-dipped treats, spicy-sweet candy and toppings your guests mix themselves. A guaranteed crowd magnet.</p>
+        <span class="tag">Signature service</span>
+      </article>
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="14" r="4"/><path d="M12 12l1.5 1.5M7.5 7.5L6 6"/></svg></div>
+        <h3>Mexican Candy & Treat Tables</h3>
+        <p>Traditional Mexican sweets — paletas, candied fruit, spicy gummies and tamarind candy — arranged into a colorful table for any celebration.</p>
+        <span class="tag">Authentic flavors</span>
+      </article>
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9zM3 9l2-5h14l2 5M12 9v12"/></svg></div>
+        <h3>Dessert Tables for Events</h3>
+        <p>A full spread of homemade desserts styled for weddings, graduations and corporate events. You pick the theme and colors — we handle the sweets.</p>
+        <span class="tag">Full setup</span>
+      </article>
+      <article class="svc reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8s-4 0-5-2 1-4 3-3c2 1 2 5 2 5zM12 8s4 0 5-2-1-4-3-3c-2 1-2 5-2 5z"/></svg></div>
+        <h3>Sweet Gift Boxes</h3>
+        <p>Curated boxes of homemade cookies, candy and treats for birthdays, holidays and thank-yous — packed fresh and ready to give.</p>
+        <span class="tag">Great for gifting</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Why Sweet Sweets</span>
+      <h2>Homemade, the way it should taste</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal">
+        <span class="num">01</span>
+        <div><h3>Baked Fresh to Order</h3><p>Nothing sits on a shelf. Your treats are baked in the days before your event, so they arrive fresh and full of flavor.</p></div>
+      </div>
+      <div class="why reveal">
+        <span class="num">02</span>
+        <div><h3>Real Homemade Recipes</h3><p>Family-style recipes and quality ingredients — the kind of sweets that taste like someone's abuela made them, because they practically did.</p></div>
+      </div>
+      <div class="why reveal">
+        <span class="num">03</span>
+        <div><h3>San Diego Local</h3><p>We're your neighbors. Easy pickup in San Diego, plus local delivery for events across the county — no shipping, no stale treats.</p></div>
+      </div>
+      <div class="why reveal">
+        <span class="num">04</span>
+        <div><h3>Events of Every Size</h3><p>From a dozen cupcakes for the office to a full chamoy bar for a 200-guest quinceañera — we scale the sweets to your party.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" style="color:var(--brass)">Service Area</span>
+      <h2>Serving San Diego County</h2>
+      <p>Pickup in San Diego, with delivery and event setup across the county. Planning something farther out? Just ask.</p>
+    </div>
+    <div class="towns reveal">
+      <span class="town home">San Diego</span>
+      <span class="town">Chula Vista</span>
+      <span class="town">National City</span>
+      <span class="town">La Mesa</span>
+      <span class="town">El Cajon</span>
+      <span class="town">Poway</span>
+      <span class="town">Escondido</span>
+      <span class="town">Oceanside</span>
+      <span class="town">Carlsbad</span>
+      <span class="town">Santee</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <h2>Let's plan your sweets</h2>
+      <p>Tell us about your event — the date, the occasion, and how many sweet teeth we're feeding. We reply to every message personally.</p>
+      <div class="info-row">
+        <span class="dot"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <span><a href="mailto:101sweetsweets@gmail.com">101sweetsweets@gmail.com</a></span>
+      </div>
+      <div class="info-row">
+        <span class="dot"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span>San Diego, California</span>
+      </div>
+      <div class="info-row">
+        <span class="dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <span>Tuesday – Saturday, 9:00 am – 5:00 pm</span>
+      </div>
+    </div>
+    <form class="quote-form reveal" id="quoteForm">
+      <h3>Request a free quote</h3>
+      <p>Fill this out and it opens an email to us — just hit send.</p>
+      <div class="field">
+        <label for="qname">Your name</label>
+        <input id="qname" name="name" type="text" required placeholder="e.g. Maria Garcia">
+      </div>
+      <div class="field">
+        <label for="qphone">Phone (optional)</label>
+        <input id="qphone" name="phone" type="tel" placeholder="(619) 555-0123">
+      </div>
+      <div class="field">
+        <label for="qtype">What do you need?</label>
+        <select id="qtype" name="type">
+          <option>Custom cake</option>
+          <option>Cupcakes / mini desserts</option>
+          <option>Chamoy bar catering</option>
+          <option>Dessert table for an event</option>
+          <option>Sweet gift boxes</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qmsg">Event details</label>
+        <textarea id="qmsg" name="message" required placeholder="Event date, occasion, number of guests, flavors you like…"></textarea>
+      </div>
+      <button type="submit" class="btn" style="width:100%">Send Quote Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">Sweet<span>Sweets</span></a>
+    <p>Homemade sweets & chamoy bar catering · San Diego, CA</p>
+    <p><a href="mailto:101sweetsweets@gmail.com">101sweetsweets@gmail.com</a></p>
+    <p class="credit">Demo by Wahab Codes</p>
+  </div>
+</footer>
+
+<script>
+  const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.getElementById('quoteForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const n=document.getElementById('qname').value.trim();
+    const p=document.getElementById('qphone').value.trim();
+    const t=document.getElementById('qtype').value;
+    const m=document.getElementById('qmsg').value.trim();
+    const subject=encodeURIComponent('Quote request — '+t);
+    const body=encodeURIComponent('Name: '+n+(p?'\nPhone: '+p:'')+'\nInterested in: '+t+'\n\nEvent details:\n'+m);
+    window.location.href='mailto:101sweetsweets@gmail.com?subject='+subject+'&body='+body;
+  });
+</script>
+</body>
+</html>
